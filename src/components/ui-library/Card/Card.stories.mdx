@@ -1,0 +1,48 @@
+<!-- Card.stories.mdx -->
+import { useState } from 'react';
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { within, userEvent } from '@storybook/testing-library';
+
+import { Card, CardHeader, CardContent, CardFooter } from '.';
+import Button from '../Button';
+
+<Meta title="Card" component={Card} />
+
+export const Template = (args) => {
+  const [isDone, setIsDone] = useState(false);
+  return (
+    <Card>
+      <CardHeader>
+        <div className="flex items-end justify-between pt-0.5 px-4">
+          <div className="text-xxs text-gray-400">orderNumber</div>
+          <div className="font-bold text-red-500 text-sm">2/12/21</div>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <img
+          className="-top-8 absolute"
+          src="https://media.istockphoto.com/photos/single-family-new-construction-homein-suburb-neighborhood-in-the-picture-id1147674294?k=20&m=1147674294&s=612x612"
+        />
+      </CardContent>
+      <CardFooter>
+        <div className="flex flex-col">
+          <div className="flex font-semibold justify-center items-center text-xxs h-5">
+            5763 Howthorne St, Los Angeles, CA 91009
+          </div>
+          <Button
+            onClick={() => setIsDone(!isDone)}
+            isDone={isDone}
+          >
+            {isDone ? 'Done' : 'To Do'}
+          </Button>
+        </div>
+      </CardFooter>
+    </Card>
+  );
+};
+
+<Canvas>
+  <Story name="Card">
+    {Template.bind({})}
+  </Story>
+</Canvas>

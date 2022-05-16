@@ -1,0 +1,21 @@
+Button.stories.mdx
+
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { within, userEvent } from '@storybook/testing-library';
+
+import Button from '.';
+
+<Meta title="Button" component={Button} />
+
+export const Template = ({ isDone }) => <Button isDone={isDone}>Button</Button>;
+
+<Canvas>
+  <Story
+    name="Button"
+    args={{
+      isDone: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
