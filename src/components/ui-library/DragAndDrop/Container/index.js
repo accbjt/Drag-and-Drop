@@ -2,20 +2,14 @@ import React, { useState, cloneElement, useEffect } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import useResizeObserver from '@react-hook/resize-observer'
 
+import { getCurrentScreenSize } from '../../../../utils';
+
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
   const [removed] = result.splice(startIndex, 1);
   result.splice(endIndex, 0, removed);
 
   return result;
-};
-
-const getCurrentScreenSize = (clientWidth) => {
-  if (clientWidth <= 640) {
-    return 'vertical';
-  }
-
-  return 'horizontal';
 };
 
 const Container = ({ children }) => {
