@@ -1,0 +1,72 @@
+<!-- Container.stories.mdx -->
+import { useState, useEffect } from 'react';
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { within, userEvent } from '@storybook/testing-library';
+
+import DragAndDrop from '..'
+
+import Button from '../../Button';
+
+<Meta title="Drag and Drop" component={DragAndDrop.Container} />
+
+export const CutomButton = () => {
+  const [isDone, setIsDone] = useState(false);
+  return (
+    <Button isDone={isDone} onClick={() => setIsDone(!isDone)}>
+      {isDone ? 'Click me' : 'Done'}
+    </Button>
+  );
+}
+
+export const Template = (args) => {
+  return (
+    <DragAndDrop.Container gridColumns={3}>
+      <DragAndDrop.Item draggableId="drag-1">
+        <DragAndDrop.ItemDragHandle>
+          <div className="w-52 h-52 bg-green-500">
+            Drag 1
+          </div>
+        </DragAndDrop.ItemDragHandle>
+      </DragAndDrop.Item>
+      <DragAndDrop.Item draggableId="drag-2">
+        <div className="w-52 border rounded p-2 my-1">
+          <DragAndDrop.ItemDragHandle>
+            <img  src="https://e7.pngegg.com/pngimages/178/590/png-clipart-ace-of-heart-playing-cad-playing-card-ace-of-hearts-one-card-suit-heart-playing-cards-love-game-thumbnail.png" />
+          </DragAndDrop.ItemDragHandle>
+          <CutomButton />
+        </div>
+      </DragAndDrop.Item>
+      <DragAndDrop.Item draggableId="drag-3">
+        <DragAndDrop.ItemDragHandle>
+          <div className="w-52 h-52 bg-blue-500">Drag 3</div>
+        </DragAndDrop.ItemDragHandle>
+      </DragAndDrop.Item>
+      <DragAndDrop.Item draggableId="drag-4">
+        <DragAndDrop.ItemDragHandle>
+          <div className="w-52 h-52 bg-green-500">
+            Drag 4
+          </div>
+        </DragAndDrop.ItemDragHandle>
+      </DragAndDrop.Item>
+      <DragAndDrop.Item draggableId="drag-5">
+        <div className="w-52 border rounded p-2 my-1">
+          <DragAndDrop.ItemDragHandle>
+            <img  src="https://e7.pngegg.com/pngimages/178/590/png-clipart-ace-of-heart-playing-cad-playing-card-ace-of-hearts-one-card-suit-heart-playing-cards-love-game-thumbnail.png" />
+          </DragAndDrop.ItemDragHandle>
+          <CutomButton />
+        </div>
+      </DragAndDrop.Item>
+      <DragAndDrop.Item draggableId="drag-6">
+        <DragAndDrop.ItemDragHandle>
+          <div className="w-52 h-52 bg-blue-500">Drag 6</div>
+        </DragAndDrop.ItemDragHandle>
+      </DragAndDrop.Item>
+    </DragAndDrop.Container>
+  );
+};
+
+<Canvas>
+  <Story name="Container">
+    {Template.bind({})}
+  </Story>
+</Canvas>
