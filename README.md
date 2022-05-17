@@ -15,6 +15,9 @@ npm run server:start
 npm start
 ```
 
+### Open App
+Go to http://localhost:3000
+
 ### Run StoryBook 
 ```
 npm run storybook
