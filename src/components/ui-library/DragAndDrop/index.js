@@ -1,10 +1,10 @@
-import DragAndDropContainer from './DragAndDropContainer';
-import DragAndDropItem from './DragAndDropItem';
-import ItemDragHandle from './DragAndDropItem/ItemDragHandle';
+import Container from './Container';
+import Item from './Item';
+import ItemDragHandle from './Item/ItemDragHandle';
 
 const DragAndDrop = {
-  DragAndDropContainer,
-  DragAndDropItem,
+  Container,
+  Item,
   ItemDragHandle,
 };
 

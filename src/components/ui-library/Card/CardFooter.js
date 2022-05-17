@@ -1,11 +1,9 @@
 import React from 'react';
 
-const CardFooter = ({ children }) => {
-  return (
-    <div className="">
-      {children}
-    </div>
-  );
-};
+const CardFooter = ({ children }) => (
+  <div>
+    {children}
+  </div>
+);
 
 export default CardFooter;

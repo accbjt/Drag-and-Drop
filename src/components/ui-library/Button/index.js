@@ -1,26 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
+import tw, { styled } from 'twin.macro';
 
-const Button = ({ isDone, children, onClick }) => {
-  return (
-    <ButtonContainer onClick={onClick} isDone={isDone}>
-      {children}
-    </ButtonContainer>
-  );
-};
+const Button = ({ isDone, children, onClick }) => (
+  <ButtonContainer onClick={onClick} isDone={isDone}>
+    {children}
+  </ButtonContainer>
+);
 
-const ButtonContainer = styled.div.attrs(({ isDone }) => {
-  let className = 'flex justify-center items-center font-light text-white text-xxs';
-
-  if (isDone) {
-    className = `${className} bg-pippen-green`;
-  } else {
-    className = `${className} bg-pippen-blue`;
-  }
-
-  return {
-    className,
-  };
-})``;
+const ButtonContainer = styled.div(({ isDone }) => [
+  tw`flex justify-center items-center font-light text-white text-xxs`,
+  isDone ? tw`bg-pippen-green` : tw`bg-pippen-blue`,
+]);
 
 export default Button;

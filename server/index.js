@@ -1,6 +1,6 @@
 const http = require('http');
 
-const data = [
+let data = [
   {
     "id": 1,
     "orderNumber": "PPN000001",

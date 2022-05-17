@@ -24,15 +24,15 @@ function App() {
 
   return (
     <div className="m-5">
-      <DragAndDrop.DragAndDropContainer>
+      <DragAndDrop.Container>
         {properties.map(property => {
           return (
-            <DragAndDrop.DragAndDropItem key={property.id} draggableId={`drag-${property.id}`}>
+            <DragAndDrop.Item key={property.id} draggableId={`drag-${property.id}`}>
               <PropertyCard property={property} />
-            </DragAndDrop.DragAndDropItem>
+            </DragAndDrop.Item>
           );
         })}
-      </DragAndDrop.DragAndDropContainer>
+      </DragAndDrop.Container>
     </div>
   );
 }
