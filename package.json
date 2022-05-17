@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
     "babel-jest": "^28.1.0",
+    "cypress": "^9.6.1",
     "jest": "^28.1.0",
     "postcss-cli": "^7.1.2",
     "react": "^17.0.2",
@@ -26,12 +27,13 @@
     "test": "jest",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "cy:open": "cypress open"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:cypress/recommended"
     ],
     "overrides": [
       {
@@ -40,6 +42,14 @@
         ],
         "rules": {
           "import/no-anonymous-default-export": "off"
+        }
+      },
+      {
+        "files": [
+          "**/*.spec.*"
+        ],
+        "rules": {
+          "jest/valid-expect": "off"
         }
       }
     ]
@@ -70,8 +80,10 @@
     "@storybook/testing-library": "^0.0.11",
     "@typescript-eslint/parser": "^5.24.0",
     "autoprefixer": "^9.8.8",
+    "babel-eslint": "^10.1.0",
     "eslint": "^8.15.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.29.4",

@@ -19,3 +19,14 @@ npm start
 ```
 npm run storybook
 ```
+
+### Run Jest Tests
+```
+npm run test
+```
+
+### Run Cypress Test
+Make sure you have your FE and BE running before running this test.
+```
+npm run cy:open
+```
