@@ -3,7 +3,7 @@ import {
   Card, CardHeader, CardContent, CardFooter,
 } from '../ui-library/Card';
 import Button from '../ui-library/Button';
-import DragAndDrop, { ItemDragHandle } from '../ui-library/DragAndDrop';
+import DragAndDrop from '../ui-library/DragAndDrop';
 
 const getCurrentStatus = (status) => {
   if (status === 'todo') {
@@ -30,6 +30,7 @@ const PropertyCard = ({ property }) => {
           <img
             className="-top-8 absolute"
             src={image}
+            alt="property"
           />
         </CardContent>
       </DragAndDrop.ItemDragHandle>
