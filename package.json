@@ -2,6 +2,10 @@
   "name": "pippen-challenge-2",
   "version": "0.1.0",
   "private": true,
+  "engines" : { 
+    "node" : ">=v14.18.1",
+    "npm": ">=8.5.5"
+  },
   "dependencies": {
     "@react-hook/resize-observer": "^1.2.5",
     "@testing-library/jest-dom": "^5.16.4",
