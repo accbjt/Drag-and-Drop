@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import {
   Card, CardHeader, CardContent, CardFooter,
 } from '../ui-library/Card';
@@ -49,6 +50,15 @@ const PropertyCard = ({ property }) => {
       </CardFooter>
     </Card>
   );
+};
+
+PropertyCard.propTypes = {
+  property: PropTypes.shape({
+    orderNumber: PropTypes.string,
+    address: PropTypes.string,
+    image: PropTypes.string,
+    status: PropTypes.string,
+  }).isRequired,
 };
 
 export default PropertyCard;
